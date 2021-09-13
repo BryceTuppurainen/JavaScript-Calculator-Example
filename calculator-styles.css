@@ -1,0 +1,43 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 40pt;
+}
+
+table
+{
+    width: 80%;
+    margin: 0 10% 0 10%;
+}
+
+#previous-answer
+{
+    width: 80%;
+    height: 80px;
+    margin: 1.5% 10% 1% 10%;
+}
+
+#answer
+{
+    width: 80%;
+    height: 80px;
+    margin: 5% 10% 2.5% 10%;
+}
+
+tr
+{
+    height: 80px;
+}
+
+th, td
+{
+    width: 20%;
+}
+
+.calculator-button
+{
+    width: 100%;
+    height: 100%;
+}

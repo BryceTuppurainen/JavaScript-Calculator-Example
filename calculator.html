@@ -1,0 +1,129 @@
+<html>
+
+<head>
+    <title>My Calculator</title>
+    <link rel="stylesheet" href="calculator-styles.css"/>
+</head>
+
+<body>
+    <form>
+        <p id="previous-answer"></p>
+        <input type="text" name="answer" id="answer" />
+        <table>
+            <tr>
+                <th>
+                    <input type="button" class="calculator-button" value="7" name="seven-button" onclick="typeValue(7);"/>
+                </th>
+
+                <th>
+                    <input type="button" class="calculator-button" value="8" name="eight-button" onclick="typeValue(8)"/>
+                </th>
+
+                <th>
+                    <input type="button" class="calculator-button" value="9" name="nine-button"  onclick="typeValue(9)"/>
+                </th>
+
+                <th>
+                    <input type="button" class="calculator-button" value="&#xF7;" name="divide-button" onclick="divide()" />
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" class="calculator-button" value="4" name="four-button"  onclick="typeValue(4)"/>
+                </td>
+
+                <td>
+                    <input type="button" class="calculator-button" value="5" name="five-button"  onclick="typeValue(5)"/>
+                </td>
+
+                <td>
+                    <input type="button" class="calculator-button" value="6" name="six-button"  onclick="typeValue(6)"/>
+                </td>
+
+                <td>
+                    <input type="button" class="calculator-button" value="x" name="multiply-button" onclick="multiply()"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" class="calculator-button" value="1" name="one-button"  onclick="typeValue(1)"/>
+                </td>
+
+                <td>
+                    <input type="button" class="calculator-button" value="2" name="two-button"  onclick="typeValue(2)"/>
+                </td>
+
+                <td>
+                    <input type="button" class="calculator-button" value="3" name="three-button"  onclick="typeValue(3)"/>
+                </td>
+
+                <td>
+                    <input type="button" class="calculator-button" value="-" name="subtract-button" onclick="sub()" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" class="calculator-button" value="." name="period-button"  onclick="typeValue('.')"/>
+                </td>
+
+                <td>
+                    <input type="button" class="calculator-button" value="0" name="zero-button"  onclick="typeValue(0)"/>
+                </td>
+
+                <td>
+                    <input type="button" class="calculator-button" value="=" onclick="setPrev()" />
+                </td>
+
+                <td>
+                    <input type="button" class="calculator-button" value="+" name="addition-button" onclick="add()" />
+                </td>
+            </tr>
+        </table>
+    </form>
+    <script>
+        var ans = document.getElementById("answer"); // ANS is shorthand for answer throughout this script
+        var prev = 0;
+
+        // TODO - For the Wednesday students, we'll be making this a switch case, correcting the functions to update an enum which then only calls the actual operation on enter (the enum will be displayed underneath prev)
+        
+        function typeValue(valueToType) {
+            ans.value += valueToType;
+        }
+
+        function setPrev() {
+            prev = parseFloat(ans.value);
+            ans.value = "";
+            document.getElementById("previous-answer").innerHTML = prev;
+        }
+
+        function add() {
+            ans.value = parseFloat(prev) + parseFloat(ans.value);
+            prev = parseFloat(ans.value);
+            ans.value = "";
+            document.getElementById("previous-answer").innerHTML = prev;
+        }
+
+        function sub() {
+            ans.value = parseFloat(prev) - parseFloat(ans.value);
+            prev = parseFloat(ans.value);
+            ans.value = "";
+            document.getElementById("previous-answer").innerHTML = prev;
+        }
+
+        function divide() {
+            ans.value = parseFloat(prev) / parseFloat(ans.value);
+            prev = parseFloat(ans.value);
+            ans.value = "";
+            document.getElementById("previous-answer").innerHTML = prev;
+        }
+
+        function multiply() {
+            ans.value = parseFloat(prev) * parseFloat(ans.value);
+            prev = parseFloat(ans.value);
+            ans.value = "";
+            document.getElementById("previous-answer").innerHTML = prev;
+        }
+    </script>
+</body>
+
+</html>
